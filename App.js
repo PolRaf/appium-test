@@ -33,12 +33,12 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity accessibilityLabel="ciao" onPress={() => {
+        <TouchableOpacity accessibilityLabel="button" onPress={() => {
           this.setState({
             onPressed: "clicked",
           })
         }}>
-          <Text>{this.state.onPressed}</Text>
+          <Text accessibilityLabel="counter">{this.state.onPressed}</Text>
         </TouchableOpacity>
       </View>
     );

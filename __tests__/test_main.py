@@ -1,7 +1,15 @@
 def test_basic(driver):
-    WAIT_SEC = 2
+    WAIT_SEC = 20
     driver.implicitly_wait(WAIT_SEC)
 
-    elem = driver.find_element_by_accessibility_id('ciao')
+    btn = driver.find_element_by_accessibility_id('button')
+    counter = driver.find_element_by_accessibility_id('counter')
+    assert counter.text == 'not_clicked'
 
-    assert elem is not None
+    btn.click()
+
+    assert counter.text == 'clicked'
+
+
+    assert btn is not None
+    assert counter is not None
