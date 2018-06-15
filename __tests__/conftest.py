@@ -5,22 +5,22 @@ from appium import webdriver
 
 @pytest.fixture(scope="function")
 def driver():
+    #driver = webdriver.Remote(
+        #command_executor='http://127.0.0.1:4723/wd/hub',
+        #desired_capabilities={
+            #'app': '/Users/vood/dev/appium-test/ios/build/Build/Products/Debug-iphonesimulator/myTestProject.app',
+            #'platformName': 'iOS',
+            #'platformVersion': '11.4',
+            #'deviceName': 'iPhone Simulator'
+        #})
     driver = webdriver.Remote(
         command_executor='http://127.0.0.1:4723/wd/hub',
         desired_capabilities={
-            'app': '/Users/vood/dev/appium-test/ios/build/Build/Products/Debug-iphonesimulator/myTestProject.app',
-            'platformName': 'iOS',
-            'platformVersion': '11.4',
-            'deviceName': 'iPhone Simulator'
+            'app': os.path.expanduser(
+                '/Users/raffaellapolistena/dev/myTestProject/android/app/build/outputs/apk/app-debug.apk'),
+            'platformName': 'Android',
+            'deviceName': 'Android Emulator'
         })
-        #driver = webdriver.Remote(
-        # command_executor='http://127.0.0.1:4723/wd/hub',
-        # desired_capabilities={
-        #     'app': os.path.expanduser(
-        #         '/Users/vood/dev/appium-test/android/app/build/outputs/apk/app-debug.apk'),
-        #     'platformName': 'Android',
-        #     'deviceName': 'Android Emulator'
-        # })
 
     yield driver
    #driver.quit()
