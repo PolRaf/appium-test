@@ -17,7 +17,7 @@ def driver():
         command_executor='http://127.0.0.1:4723/wd/hub',
         desired_capabilities={
             'app': os.path.expanduser(
-                '/Users/raffaellapolistena/dev/myTestProject/android/app/build/outputs/apk/app-debug.apk'),
+                '/Users/raffaellapolistena/dev/myTestProject/android/app/build/outputs/apk/ApiDemos-debug.apk'),
             'platformName': 'Android',
             'deviceName': 'Android Emulator'
         })
